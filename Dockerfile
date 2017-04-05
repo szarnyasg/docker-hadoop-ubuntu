@@ -27,3 +27,9 @@ RUN sed -i '/^export HADOOP_CONF_DIR/ s:.*:export HADOOP_CONF_DIR=/usr/local/had
 
 RUN mkdir $HADOOP_PREFIX/input
 RUN cp $HADOOP_PREFIX/etc/hadoop/*.xml $HADOOP_PREFIX/input
+
+ENV HADOOP_HOME=$HADOOP_PREFIX
+ENV LDBC_SNB_DATAGEN_HOME=/root/ldbc
+ENV HADOOP_CLIENT_OPTS="-Xmx2G"
+
+WORKDIR /root/ldbc
