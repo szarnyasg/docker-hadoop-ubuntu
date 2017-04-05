@@ -1,4 +1,4 @@
-#Apache Hadoop 2.6.0 Docker image
+# Apache Hadoop 2.6.0 Docker image
 
 A few weeks ago we released an Apache Hadoop 2.3 Docker image (using CentOS 6.5 as the guest OS) - this quickly become the most [popular](https://registry.hub.docker.com/search?q=hadoop&s=downloads) Hadoop image in the Docker [registry](https://registry.hub.docker.com/).
 
@@ -8,14 +8,15 @@ Following the success of our CentOS based Hadoop 2.3 Docker [image](https://regi
 
 _FYI: All the former Hadoop releases (2.3, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.5.2, 2.6.0) are available in the GitHub branches or our [Docker Registry](https://registry.hub.docker.com/u/sequenceiq/hadoop-ubuntu/) - check the tags._
 
-# Build the image
+## Build the image
 
 If you'd like to try directly from the Dockerfile you can build the image as:
 
 ```
 docker build  -t sequenceiq/hadoop-ubuntu:2.6.0 .
 ```
-# Pull the image
+
+## Pull the image
 
 The image is also released as an official Docker image from Docker's automated build repository - you can always pull or refer the image when launching containers.
 
@@ -23,7 +24,7 @@ The image is also released as an official Docker image from Docker's automated b
 docker pull sequenceiq/hadoop-ubuntu:2.6.0
 ```
 
-# Start a container
+## Start a container
 
 In order to use the Docker image you have just build or pulled use:
 
@@ -31,7 +32,7 @@ In order to use the Docker image you have just build or pulled use:
 docker run -i -t sequenceiq/hadoop-ubuntu:2.6.0 /etc/bootstrap.sh -bash
 ```
 
-## Testing
+### Testing
 
 You can run one of the stock examples:
 
@@ -44,9 +45,9 @@ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep i
 bin/hdfs dfs -cat output/*
 ```
 
-## Hadoop native libraries, build, Bintray, etc
+### Hadoop native libraries, build, Bintray, etc.
 
-The Hadoop build process is no easy task - requires lots of libraries and their right version, protobuf, etc and takes some time - we have simplified all these, made the build and released a 64b version of Hadoop nativelibs on this [Bintray repo](https://bintray.com/sequenceiq/sequenceiq-bin/hadoop-native-64bit/2.5.0/view/files). Enjoy.
+The Hadoop build process is no easy task - requires lots of libraries and their right version, protobuf, etc and takes some time - we have simplified all these, made the build and released a 64b version of Hadoop nativelibs on this [Bintray repo](https://bintray.com/sequenceiq/sequenceiq-bin/hadoop-native-64bit/2.6.0/view/files). Enjoy.
 
 ## Automate everything
 
